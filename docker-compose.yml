@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./backend
+    container_name: test_back
+    ports:
+      - "127.0.0.1:4000:3000"
+
+  frontend:
+    build: ./frontend
+    container_name: test_front
+    ports:
+      - "127.0.0.1:8000:80"
+    depends_on:
+      - backend
+
+
+
+
+
