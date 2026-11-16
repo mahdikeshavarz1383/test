@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>My App</h1>
+  <p id="msg">loading...</p>
+  <script>
+    fetch('/api/hello')
+      .then((r) => r.json())
+      .then((d) => (document.getElementById('msg').textContent = d.message))
+      .catch(() => (document.getElementById('msg').textContent = 'backend unreachable'));
+  </script>
+</body>
+</html>
